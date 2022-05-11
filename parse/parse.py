@@ -12,13 +12,13 @@ def get_html(url, params=None):
 def get_content(html):
     soup = BeautifulSoup(html, 'html.parser')
     items = soup.find_all('tr', class_='row-arjDAkRm listRow')
-    cars = []
+    share = []
     for item in items:
-        cars.append({
+        share.append({
             'Название акции':item.find('sup', class_='apply-common-tooltip').get_text(),
             'Тикер':item.find('a', class_='apply-common-tooltip').get_text()
         })
-    print(cars)
+    print(share)
 
 
 def parse():
@@ -31,3 +31,4 @@ def parse():
 
 
 parse()
+
